@@ -40,21 +40,40 @@ module.exports = (robot) ->
     data = req.body
     console.log(data)
     room = query.room || process.env["HUBOT_MACKEREL_NOTIFIER_ROOM"]
-    state = if data.isOpen then "Open" else "Closed"
-    alert = data.alerts[0]
-    robot.messageRoom room, "[Mackerel] Alert #{state}: #{alert.reason} at #{data.host.name} (#{data.host.status})"
-    robot.messageRoom "#nagios", "[Mackerel] Alert #{state}: #{alert.reason} at #{data.host.name} (#{data.host.status})"
+    alert = data.alert
+    host = data.host
+    if alert && host
+      state = if alert.isOpen then "Open" else "Closed"
+      role = host.roles[0]
+      msg = "[Mackerel] #{state} #{alert.status}: #{alert.monitorName} at #{host.name} (#{host.status}) #{role.fullname} #{alert.url}"
+      robot.messageRoom room, msg
+
     res.end ""
 
 # {
-#   "event":"alert",
-#   "alert": {
-#     "id":"28Y4h...",
-#     "isOpen":false,
-#     "createdAt":1405654501,
-#     "url":"https://mackerel.io/orgs/.../alerts/...",
-#     "hostId":"...",
-#     "hostUrl":"https://mackerel.io/orgs/.../hosts/..."
+#   "event": "alert",
+#   "host": {
+#     "id": "22D4...",
+#     "name": "app01",
+#     "url": "https://mackerel.io/orgs/.../hosts/...",
+#     "type": "unknown",
+#     "status": "working",
+#     "memo": "",
+#     "isRetired": false,
+#     "roles": [
+#       {
+#         "fullname": "Service: role",
+#         "serviceUrl": "https://mackerel.io/orgs/.../services/...",
+#         "roleUrl": "https://mackerel.io/orgs/.../services/..."
+#       }
+#     ]
 #   },
-#   "type":"mackerel"
+#   "alert": {
+#     "url": "https://mackerel.io/orgs/.../alerts/2bj...",
+#     "createdAt": 1409823378983,
+#     "status": "critical",
+#     "isOpen": true,
+#     "trigger": "monitor",
+#     "monitorName": "unreachable"
+#   }
 # }
