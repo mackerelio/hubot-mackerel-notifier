@@ -43,9 +43,8 @@ module.exports = (robot) ->
     alert = data.alert
     host = data.host
     if alert && host
-      state = if alert.isOpen then "Open" else "Closed"
       role = host.roles[0]
-      msg = "[Mackerel] #{state} #{alert.status}: #{alert.monitorName} at #{host.name} (#{host.status}) #{role.fullname} #{alert.url}"
+      msg = "[Mackerel] #{alert.status.toUpperCase()}: #{alert.monitorName} at #{host.name} (#{host.status}) #{role.fullname} #{alert.url}"
       robot.messageRoom room, msg
 
     res.end ""
