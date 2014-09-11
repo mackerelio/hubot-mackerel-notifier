@@ -1,4 +1,4 @@
-# hubot-mackerel
+# hubot-mackerel-notifier
 
 mackerel.io alert notification from webhook
 
