@@ -1,9 +1,17 @@
 language: node_js
 node_js:
-  - "0.11"
-  - "0.10"
-  - "0.8"
+- '0.11'
+- '0.10'
+- '0.8'
 before_install:
-  - npm update -g npm
+- npm update -g npm
 before_script:
-  - npm install -g grunt-cli
+- npm install -g grunt-cli
+deploy:
+  provider: npm
+  email: platform+mackerel@hatena.ne.jp
+  api_key:
+    secure: rqoB3blRmJFkUtmtS49NndY2wd550679r2QtpYqB7L0h/pOJIel4JWXubep2lW75fD8pEDai8Hhh7Ssp0W+7HzXswJ6ds87rlc+uFWI5OHIjZ342A21s1UtIwRYsX+D938D2hbT/ZMk6XoazSOpE1DC15zLhNaAOzoOXFEHV+lY=
+  on:
+    tags: true
+     repo: mackerelio/hubot-mackerel-notifier
