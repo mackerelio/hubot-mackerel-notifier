@@ -22,7 +22,7 @@ describe 'hubot-mackerel-notifier', ->
   beforeEach (done)->
     robot = new Robot null, 'mock-adapter', yes, 'Testbot'
     robot.adapter.on 'connected', ->
-      robot.loadFile path.resolve('.'), 'mackerel.coffee'
+      robot.loadFile path.resolve('.'), 'index.coffee'
       hubotScripts = path.resolve 'node_modules', 'hubot', 'src', 'scripts'
       robot.loadFile hubotScripts, 'help.coffee'
       user = robot.brain.userForId '1', {
