@@ -38,7 +38,7 @@ module.exports = (robot) ->
   robot.router.post "/hubot/mackerel", (req, res) ->
     query = querystring.parse(url.parse(req.url).query)
     data = req.body
-    room = query.room || process.env["HUBOT_MACKEREL_NOTIFIER_ROOM"]
+    room = (query && query.room) || process.env["HUBOT_MACKEREL_NOTIFIER_ROOM"]
     alert = data.alert
     host = data.host
     if alert && host
