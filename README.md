@@ -1,8 +1,44 @@
-# hubot-mackerel-notifier
+# hubot-mackerel-notifier [![Build Status](https://travis-ci.org/mackerelio/hubot-mackerel-notifier.svg?branch=master)](https://travis-ci.org/mackerelio/hubot-mackerel-notifier)
 
 mackerel.io alert notification from webhook
 
+## Screenshot
+
+### Alert Notification
+![](http://f.st-hatena.com/images/fotolife/m/mackerelio/20140915/20140915165010.png?1410767426)
+
+### Hostname hearing
+![](http://f.st-hatena.com/images/fotolife/m/mackerelio/20140915/20140915165009.png?1410767427)
+
+
+## Getting Started
+
+* Setup your hubot
+* Add the script to your hubot.
+```
+npm install hubot-mackerel-notifier --save
+```
+* Commit and Push
+```
+git commit -a -m 'add hubot-mackerel-notifier'
+git push
+```
+* Add the [config variables](#configuration), like:
+```
+heroku config:add HUBOT_MACKEREL_API_KEY="..."
+heroku config:add HUBOT_MACKEREL_HOST_REGEXP="\\b[a-zA-Z0-9._-]+[.]local-domain\\b"
+heroku config:add HUBOT_MACKEREL_ORG_NAME="exmaple"
+heroku config:add HUBOT_MACKEREL_NOTIFIER_ROOM="#general"
+```
+* Deploy your bot:
+```
+git push heroku master
+```
+* Enjoy!
+
 ## Configuration
+
+This script uses following environment variables:
 
 * `HUBOT_MACKEREL_API_KEY`
   * API Key of Mackerel
@@ -13,9 +49,20 @@ mackerel.io alert notification from webhook
 * `HUBOT_MACKEREL_NOTIFIER_ROOM`
   * target room to send notifications
 
+### Example
+
 ```
 export HUBOT_MACKEREL_API_KEY="..."
-export HUBOT_MACKEREL_HOST_REGEXP="\\b[a-zA-Z0-9._-]+[.]example[.]com\\b"
+export HUBOT_MACKEREL_HOST_REGEXP="\\b[a-zA-Z0-9._-]+[.]local-domain\\b"
 export HUBOT_MACKEREL_ORG_NAME="exmaple"
 export HUBOT_MACKEREL_NOTIFIER_ROOM="#general"
+```
+
+### Another example for heroku
+
+```
+heroku config:add HUBOT_MACKEREL_API_KEY="..."
+heroku config:add HUBOT_MACKEREL_HOST_REGEXP="\\b[a-zA-Z0-9._-]+[.]local-domain\\b"
+heroku config:add HUBOT_MACKEREL_ORG_NAME="exmaple"
+heroku config:add HUBOT_MACKEREL_NOTIFIER_ROOM="#general"
 ```
