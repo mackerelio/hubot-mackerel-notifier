@@ -1,0 +1,23 @@
+{
+  "name": "hubot-mackerel-notifier",
+  "version": "0.0.1",
+  "description": "Hubot script to notify Mackerel Webhook",
+  "main": "mackerel.coffee",
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "^1.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/mackerelio/hubot-mackerel-notifier.git"
+  },
+  "author": "Mackerel <platform+mackerel@hatena.ne.jp> (http://mackerel.io/)",
+  "license": "Apache2",
+  "bugs": {
+    "url": "https://github.com/mackerelio/hubot-mackerel-notifier/issues"
+  },
+  "homepage": "https://github.com/mackerelio/hubot-mackerel-notifier"
+}
