@@ -1,6 +1,6 @@
 {
   "name": "hubot-mackerel-notifier",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hubot script to notify Mackerel Webhook",
   "main": "mackerel.coffee",
   "dependencies": {},
