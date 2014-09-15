@@ -14,4 +14,5 @@ deploy:
     secure: rqoB3blRmJFkUtmtS49NndY2wd550679r2QtpYqB7L0h/pOJIel4JWXubep2lW75fD8pEDai8Hhh7Ssp0W+7HzXswJ6ds87rlc+uFWI5OHIjZ342A21s1UtIwRYsX+D938D2hbT/ZMk6XoazSOpE1DC15zLhNaAOzoOXFEHV+lY=
   on:
     tags: true
+    all_branches: true
     repo: mackerelio/hubot-mackerel-notifier
