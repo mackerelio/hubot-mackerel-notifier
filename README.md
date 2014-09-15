@@ -18,6 +18,10 @@ mackerel.io alert notification from webhook
 ```
 npm install hubot-mackerel-notifier --save
 ```
+* Add `hubot-mackerel-notifier` to `external-scripts.json`, like:
+```
+["hubot-mackerel-notifier"]
+```
 * Commit and Push
 ```
 git commit -a -m 'add hubot-mackerel-notifier'
