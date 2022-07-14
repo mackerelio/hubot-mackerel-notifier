@@ -1,4 +1,6 @@
-# hubot-mackerel-notifier [![Build Status](https://travis-ci.org/mackerelio/hubot-mackerel-notifier.svg?branch=master)](https://travis-ci.org/mackerelio/hubot-mackerel-notifier)
+# hubot-mackerel-notifier [![No Maintenance Intended](https://unmaintained.tech/badge.svg)](https://unmaintained.tech/)
+
+[NOTE] This library has been **deprecated**.
 
 mackerel.io alert notification from webhook
 
